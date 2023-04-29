@@ -237,7 +237,7 @@ class CaptionDecoder(object):
         # tokenizer initialize
         eos = '<|EOS|>'
         special_tokens_dict = {'eos_token': eos}
-        self.tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+        self.tokenizer = GPT2Tokenizer.from_pretrained('/kaggle/input/unidiffuserofflinereply/gpt-2/gpt-2')
         self.tokenizer.add_special_tokens(special_tokens_dict)
 
         # model initialize
