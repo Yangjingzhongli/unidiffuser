@@ -56,9 +56,9 @@ class ClipCaptionModel(nn.Module):
         self.prefix_length = prefix_length
         eos = '<|EOS|>'
         special_tokens_dict = {'eos_token': eos}
-        base_tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+        base_tokenizer = GPT2Tokenizer.from_pretrained('/kaggle/input/unidiffuserofflinereply/gpt-2/gpt-2')
         base_tokenizer.add_special_tokens(special_tokens_dict)
-        self.gpt = GPT2LMHeadModel.from_pretrained('gpt2', eos_token_id=base_tokenizer.eos_token_id)
+        self.gpt = GPT2LMHeadModel.from_pretrained('/kaggle/input/unidiffuserofflinereply/gpt-2/gpt-2', eos_token_id=base_tokenizer.eos_token_id)
         self.gpt.resize_token_embeddings(len(base_tokenizer))
 
         self.hidden_dim = hidden_dim
